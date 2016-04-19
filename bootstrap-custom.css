@@ -21,9 +21,7 @@
     position: relative;
 
 }
-p {
-    background-color: #FFFFFF;
-}
+
 
 .timeline:before {
         top: 0;
