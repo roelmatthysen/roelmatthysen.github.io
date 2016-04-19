@@ -1,0 +1,278 @@
+<!doctype html>
+<html>
+  
+  <head>
+    <link rel="stylesheet" type="text/css" href="bootstrap-custom.css">
+      <title>Roel Matthysen</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script>
+  var text1da = "<em>Example: data samples from the function \$\$f(x)=10e^x-17-10\\cos(x-2.3)\$\$ </em>"
+  var text2da = "<em>Example: data samples from the function \$\$f(x,y)=\\cos(x^2+y)-\\frac{x}{y-1}\$\$ </em>"
+  var text1db = "<em> Example: An extension of \\(f(x)\\) from \\(\[-0.5,0.5\]\\) to \\(\[-1,1\]\\).</em>"
+  var text2db = "<em> Example: An extension of \\(f(x,y)\\) from a circle with a hole to \\(\[-1,1\] \\otimes \[-1,1\]\\).</em>"
+  var text1dc = "<em>Example: the 1D Helmholtz equation \$\$\\Delta p(x) + 40^2 p(x) = 1000f(x)\$\$ with homogeneous Neumann boundary conditions.</em>"
+  var text2dc = "<em>Example: the 2D Helmholtz equation \$\$\\Delta p(x,y) + 1000 p(x,y) = f(x,y)\$\$ with homogeneous Dirichlet boundary conditions and a Gaussian source term in the top left corner.</em>"
+     function pictureChange1()
+    {    
+     document.getElementById("imagea").src="images/1da.png";
+     document.getElementById("imageb").src="images/1db.png";
+     document.getElementById("imagec").src="images/1dc.png";
+     };
+     function pictureChange2()
+     {
+     document.getElementById("imagea").src="images/2da.png";
+     document.getElementById("imageb").src="images/2db.png";
+     document.getElementById("imagec").src="images/2dc.png";
+     };
+     $(document).ready(function() {
+  $("#myButtons :input").change(function() {
+     if($(this).attr("id")=="option1") {
+  pictureChange1();
+  $("#ex1").html(text1da);
+    $("#ex2").html(text1db);
+  $("#ex3").html(text1dc);
+  MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+     };
+     if($(this).attr("id")=="option2") {
+  pictureChange2();
+  $("#ex1").html(text2da);
+    $("#ex2").html(text2db);
+  $("#ex3").html(text2dc);
+  MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+
+     };
+     });
+});
+  
+     </script>
+        </head>
+        <body>
+          <header class="navbar-default">
+            <div class="container">
+              <nav role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#">Roel Matthysen</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+                    <li><a href="#about">About </a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#software">Software</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                  </ul>
+                </div><!-- /.navbar-collapse -->
+              </nav>
+            </div><!-- /.container-fluid -->
+
+          </header>
+
+          <div  class="container-fluid">
+            <h2 id="about">About me</h2>
+            <div class="media">
+              <div class="media-left">
+                <img src="images/photo2.jpg" width = 200px></img>
+              </div>
+              <div class="media-body">
+                I am a PhD student at the KU Leuven Computer Science department under supervision of <a href="https://people.cs.kuleuven.be/~daan.huybrechs">Daan Huybrechs</a>. My research is on algorithms for frame approximations and their applications.<br/><br/>
+                <address>
+                  <em>Numerical Analysis and Applied Mathematics Section</em><br/>
+                  Celestijnenlaan 200A - box 2402 <br/>
+                  B-3001 Heverlee (Leuven) <br/>
+                  Belgium <br/>
+                  <br/>
+                  Room : 02.49
+                  <br/>
+                  <a href="mailto:roelmatthysen@kuleuven.be">roel.matthysen@kuleuven.be</a>
+                </address>
+              </div>
+
+            </div>
+            <h2 id="research">Research</h2>
+            <p>My PhD research is on function approximation using frames with certain eigenvalue distributions. These arise when, for example, restricting a Fourier Basis on a rectangular domain to some smaller enclosed domain. This results in an accurate approximation of the function on the smaller domain, but defined on the larger (and easier to work with) domain.</p>
+            <p>
+<div id="myButtons" class="btn-group" data-toggle="buttons">
+  <label class="btn btn-default active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> 1D
+  </label>
+  <label class="btn btn-default">
+    <input type="radio" name="options" id="option2" autocomplete="off"> 2D
+  </label>
+</div>
+           </p>               
+
+            <div class="row">
+              <div class="col-sm-12 col-md-4">
+                  <img id="imagea" src="images/1da.png" alt="images/1da.jpg" align="middle">
+                    <div class="caption">
+                      <h3>Function Values</h3>
+                      <p>We start from function values that are given on an equispaced grid defined on an arbitrary domain. </p>
+                      <p id="ex1"><em>Example: data samples from the function $$f(x)=10e^x-17-10\cos(x-2.3)$$ </em></p>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <img id="imageb" src="images/1db.png" alt="images/1db.jpg" align="middle">
+                      <div class="caption">
+                        <h3>Extension</h3>
+                        <p>Our algorithm finds a function approximation that is periodic on some bounding box. </p>
+                        <p id="ex2"><em> Example: An extension of \(f(x)\) from \([-0.5,0.5]\) to \([-1,1]\).</em></p>
+                      </div>
+                    </div>
+                  <div class="col-sm-12 col-md-4">
+                      <img id="imagec" src="images/1dc.png" alt="images/1dc.jpg" align="middle">
+                        <div class="caption">
+                          <h3>Applications</h3>
+                          <p>The resulting extension is used to easily solve problems such as this Helmholtz differential equation.</p>
+                          <p id="ex3"><em>Example: the 1D Helmholtz equation
+                              $$\Delta p(x) + 40^2 p(x) = 1000f(x)$$
+                              with homogeneous Neumann boundary conditions.
+                            </em>
+                          </p>
+                        </div>
+                      </div>
+                  </div>
+                      <h2 id="software">Software</h2>
+                      <ul type="disc">
+                        <li>I am a contributor to the <a href="https://github.com/daanhb/FrameFuns.jl">FrameFuns.jl</a> Julia package to compute frame approximations, hosted on github.</li>
+                        <li>My <a href="https://github.com/roelmatthysen">personal github page</a> contains miscellaneous software projects, that may or may not be up to date.</li>
+                      </ul>
+                    </div>
+                </div>
+                <div id="publications" class="container-fluid">
+                  
+                  <h2>Publications, talks and posters</h2>
+                  <ul class="timeline">
+                    <li>
+                      <div class="timeline-badge danger"><i class="glyphicon glyphicon-blackboard"></i></div>
+                      <div class="timeline-panel">
+                        <div class="timeline-heading">
+                          <h4 class="timeline-title">NATW Seminar series talk</h4>
+                          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> April 14, 2016</small></p>
+                        </div>
+                        <div class="timeline-body">
+                          Presentation in the NATW Seminar series at the KU Leuven Computer Science department.<br/>
+                          <a href=slides/NATWSeminar.pdf>slides</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="timeline-inverted">
+                      <div class="timeline-badge success"><i class="glyphicon glyphicon-file"></i></div>
+                      <div class="timeline-panel">
+                        <div class="timeline-heading">
+                          <h4 class="timeline-title">SIAM Journal of Scientific Computing Paper</h4>
+                          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> March 17, 2016</small></p>
+                        </div>
+                        <div class="timeline-body">
+                          Fast algorithms for the computation of Fourier Extensions of arbitrary length<br/>
+                          <em>SIAM J. Sci. Comput.</em><br/>
+                          <em> Vol. 38, No.2, pp. A899-A922</em><br/>
+                          <a href=http://arxiv.org/abs/1509.00206>Arxiv link</a>
+                        </div>
+                      </div>
+                    </li>                    
+                    <li>
+                      <div class="timeline-badge danger"><i class="glyphicon glyphicon-blackboard"></i></div>
+                      <div class="timeline-panel">
+                        <div class="timeline-heading">
+                          <h4 class="timeline-title">New Directions in Numerical Computation</h4>
+                          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> August 25, 2015</small></p>
+                        </div>
+                        <div class="timeline-body">
+                          Contributed talk at the <em>New Directions in Numerical Computations</em> conference, held in celebration of Nick Trefethen's 60th birthday at the Mathematical Institute of Oxford University.<br/>
+                          <a href=slides/OxfordTalkRoel.pdf>slides</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="timeline-inverted">
+                      <div class="timeline-badge warning"><i class="glyphicon glyphicon-pushpin"></i></div>
+                      <div class="timeline-panel">
+                        <div class="timeline-heading">
+                          <h4 class="timeline-title">SIAM CSE 2015</h4>
+                          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> March 16, 2015</small></p>
+
+                        </div>
+                        <div class="timeline-body">
+                          Poster at the 2015 SIAM conference on Computational Science and Engineering in Salt Lake City.<br/>
+                          <a href=slides/poster_cse_roel.pdf>pdf</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="timeline-badge danger"><i class="glyphicon glyphicon-blackboard"></i></div>
+                      <div class="timeline-panel">
+                        <div class="timeline-heading">
+                          <h4 class="timeline-title">Research cluster at ICERM</h4>
+                          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> November 6, 2014</small></p>
+                        </div>
+                        <div class="timeline-body">
+                          Research talk as invited participant at the research cluster <em>Computational Challenges in Sparse and Redundant Representations</em>. Held at the Institute for Computational and Experimental Research in Mathematics (ICERM) at Brown University.<br/>
+                          <a href=slides/ICERM.pdf>slides</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="timeline-inverted">
+                      <div class="timeline-badge warning"><i class="glyphicon glyphicon-pushpin"></i></div>
+                      <div class="timeline-panel">
+                        <div class="timeline-heading">
+                          <h4 class="timeline-title">Woudschoten 2014</h4>
+                          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> October 9, 2014</small></p>
+
+                        </div>
+                        <div class="timeline-body">
+                          Poster at the 2014 Woudschoten conference of the <em>Werkgemeenschap Scientific Computing</em> held in Zeist, The Netherlands.<br/>
+                          <a href=slides/poster_wsc_roel.pdf>pdf</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="timeline-badge danger"><i class="glyphicon glyphicon-blackboard"></i></div>
+                      <div class="timeline-panel">
+                        <div class="timeline-heading">
+                          <h4 class="timeline-title">ICOSAHOM 2014</h4>
+                          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> June 23, 2014</small></p>
+                        </div>
+                        <div class="timeline-body">
+                          Contributed talk at the 2014 International Conference on Spectral And High Order Methods.<br/>
+                          <a href=slides/ICOSAHOMtalk.pdf>slides</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="timeline-inverted">
+                      <div class="timeline-badge danger"><i class="glyphicon glyphicon-blackboard"></i></div>
+                      <div class="timeline-panel">
+                        <div class="timeline-heading">
+                          <h4 class="timeline-title">MCQMC 2014</h4>
+                          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> April 7, 2014</small></p>
+                        </div>
+                        <div class="timeline-body">
+                          Contributed talk at the 2014 International Conference on Monte Carlo and Quasi Monte Carlo methods, on research done during my Master's thesis.<br/>
+                          <a href=slides/MCQMCtalk.pdf>slides</a>
+                        </div>
+                      </div>
+                    </li>
+                    
+                  </ul>
+                </div>
+              </div>
+              
+              <!-- Latest compiled and minified JavaScript -->
+              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+            </body>
+          </html>
+          
