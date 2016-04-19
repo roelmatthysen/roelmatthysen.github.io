@@ -3,11 +3,6 @@
   margin-left: auto;
   max-width: 950px; /* or 950px */
 }
-/*body {
-    background: url('images/background.png') center;
-  background-attachment: fixed;
-  background-width: auto;  
-}*/
 .container {
   margin-right: auto;
   margin-left: auto;
@@ -21,7 +16,6 @@
     position: relative;
 
 }
-
 
 .timeline:before {
         top: 0;
